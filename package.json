@@ -11,12 +11,16 @@
   "scripts": {
     "lint": "semistandard --fix \"**/*.js\"",
     "start": "functions deploy three-doors --trigger-http",
-    "deploy": "gcloud beta functions deploy three-doors --trigger-http --stage-bucket gs://three-doors-xxxx"
+    "deploy": "gcloud beta functions deploy three-doors --trigger-http --stage-bucket gs://three-doors-xxxx",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
-     "lodash": "4.x"
+    "lodash": "4.x",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "semistandard": "^9.1.0"
-  }
+  },
+  "snyk": true
 }
